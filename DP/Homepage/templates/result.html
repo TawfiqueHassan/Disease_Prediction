@@ -33,6 +33,19 @@
       select {
         width: 100%;
       }
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        margin-top: 20px;
+    }
+    th, td {
+        text-align: left;
+        padding: 8px;
+        border-bottom: 1px solid #ddd;
+    }
+    th {
+        background-color: #f2f2f2;
+    }
     </style>
 </head>
 
@@ -520,5 +533,30 @@
                 <br>&nbsp;&nbsp;&nbsp;&nbsp;
                 <button type="submit" class="btn btn-dark" style="border-radius: 10px; margin-top: 10px;" value="Save">Predict</button>
             </form>
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;
+            <h1>Medical Diagnosis Results</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Disease</th>
+                        <th>Disease Specialist</th>
+                        <th>Doctors List</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{ disease }}</td>
+                        <td>{{ specialist }}</td>
+                        <td>
+                            <ul>
+                                {% for doctor in doctors %}
+                                    <li>{{ doctor }} <br> Phone:+880 123456789
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
 
   
